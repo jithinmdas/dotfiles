@@ -317,10 +317,14 @@ call plug#begin('~/.vim/plugged')
 
     " Misc
 	Plug 'sheerun/vim-polyglot'
+    Plug 'inkarkat/vim-mark'
+    Plug 'inkarkat/vim-ingo-library'
 
 	" Logcat
 	Plug 'thinca/vim-logcat'
 
+    " Table creation
+    Plug 'godlygeek/tabular'
 call plug#end()
 
 "----------------------------------------------------------------
@@ -714,15 +718,15 @@ set smartindent
 set cindent
 set cinoptions='(0'
 " Use tabs, no spaces
-set noexpandtab
+set expandtab
 
 " Be smart when using tabs
 set smarttab
 
 " Tab size (in spaces)
-set shiftwidth=8
-set tabstop=8
-set softtabstop=8
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
 set textwidth=80
 
 " Remap indentation
@@ -904,7 +908,7 @@ nnoremap <silent> <Leader><CR> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set
 vnoremap <silent> <Leader><CR> :<C-U>call <SID>VSetSearch()<CR>:set hlsearch<CR>
 
 " Disable highlight
-nnoremap <Leader>m :noh<CR>
+"nnoremap <Leader>m :noh<CR>
 
 " Search into a Visual selection
 vnoremap <silent> <Space> :<C-U>call RangeSearch('/')<CR>
@@ -944,7 +948,7 @@ nnoremap <Leader>vm :call <SID>GrepWrapper('grepadd!', '', '%')<CR>
 nnoremap <Leader>va :call <SID>GrepWrapper('grep!', '', '##')<CR>
 
 " Navigate between vimgrep results
-nnoremap <Leader>n :cnext<CR>zz
+" nnoremap <Leader>n :cnext<CR>zz
 nnoremap <Leader>N :cprev<CR>zz
 
 " Jump to the results in buffers (first open window), not tabs
@@ -953,11 +957,11 @@ set switchbuf=useopen
 " --- Replace ---
 "----------------------------------------------------------------
 " Replace the highlight in the current file
-nnoremap <Leader>r :%s/<C-R>///g<Left><Left>
+"nnoremap <Leader>r :%s/<C-R>///g<Left><Left>
 
 " Replace the highlight in the visual selection
 " Flag \%V --> Match only inside the visual selection
-vnoremap <Leader>r :s/\%V<C-R>/\%V//g<Left><Left>
+"vnoremap <Leader>r :s/\%V<C-R>/\%V//g<Left><Left>
 
 " Replace the highlight to all loaded buffers and arglist
 nnoremap <Leader>R :bufdo %s/<C-R>///ge<Left><Left><Left>
