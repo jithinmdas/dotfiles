@@ -283,7 +283,8 @@ map <F1> :!cscope -Rb<CR>:cs reset<CR><CR>
 
 " Set current file as logcat type
 cnoreabbrev logcat set ft=logcat
-
+" No wrapping of lines
+set nowrap
 "----------------------------------------------------------------
 " 2. Plugins (Plug)
 "----------------------------------------------------------------
