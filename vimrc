@@ -263,7 +263,7 @@ set timeoutlen=3000 ttimeoutlen=100
 set updatetime=250
 
 " Trigger InsertLeave autocmd
-inoremap <C-c> <Esc>
+" inoremap <C-c> <Esc>
 
 " No need for Ex mode
 nnoremap Q <NOP>
@@ -272,19 +272,21 @@ nnoremap Q <NOP>
 cnoreabbrev help vert help
 
 " Terminal
-if has("terminal")
-	nnoremap <silent> <F7> :call <SID>ToggleTerminal()<CR>
-	set termkey=<F7>
-	set termsize=10x0
-endif
+"if has("terminal")
+"	nnoremap <silent> <F7> :call <SID>ToggleTerminal()<CR>
+"	set termkey=<F7>
+"	set termsize=10x0
+"endif
 
 " Cscope database update
 map <F1> :!cscope -Rb<CR>:cs reset<CR><CR>
 
 " Set current file as logcat type
 cnoreabbrev logcat set ft=logcat
+
 " No wrapping of lines
-set nowrap
+" set nowrap
+
 "----------------------------------------------------------------
 " 2. Plugins (Plug)
 "----------------------------------------------------------------
