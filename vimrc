@@ -374,6 +374,17 @@ vnoremap <silent> <C-z> :call <SID>PreventGV()<CR>
 " --- Tools ---
 " NERDCommenter settings
 let g:NERDDefaultAlign          = 'left'
+let g:NERDSpaceDelims           = 1
+let g:NERDCompactSexyComs       = 1
+let g:NERDCommentEmptyLines     = 0
+let g:NERDCreateDefaultMappings = 0
+let g:NERDCustomDelimiters      = {
+	\ 'python': {'left': '#'},
+    \ 'c': {'left': '/**','right': '*/'},
+    \}
+
+nnoremap cc :call NERDComment(0,'toggle')<CR>
+vnoremap cc :call NERDComment(0,'toggle')<CR>
 
 " NERDTree settings
 nnoremap <silent> <C-n> :call <SID>ToggleNTree()<CR>
