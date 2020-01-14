@@ -351,11 +351,12 @@ let g:gitgutter_sign_modified_removed = '»╌'
 let g:gitgutter_map_keys              = 0
 let g:gitgutter_diff_args             = '--ignore-space-at-eol'
 
-nmap <Leader>j <Plug>GitGutterNextHunkzz
-nmap <Leader>k <Plug>GitGutterPrevHunkzz
+nmap <Leader>j <Plug>(GitGutterNextHunkzz)
+nmap <Leader>k <Plug>(GitGutterPrevHunkzz)
 nnoremap <silent> <C-g> :call <SID>ToggleGGPrev()<CR>zz
 nnoremap <Leader>gs :GitGutterStageHunk<CR>
 nnoremap <Leader>gu :GitGutterUndoHunk<CR>
+nnoremap <Leader>gf :GitGutterFold<CR>
 
 " Fugitive settings
 nnoremap <C-s> :Gstatus<CR>
