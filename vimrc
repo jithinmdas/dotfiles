@@ -393,7 +393,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Tagbar toggle (custom function)
-"nnoremap <silent> <C-t> :call <SID>ToggleTagbar()<CR>
+nnoremap <silent> <C-t> :call <SID>ToggleTagbar()<CR>
 let g:tagbar_autofocus        = 1
 let g:tagbar_show_linenumbers = 2
 let g:tagbar_sort             = 0
