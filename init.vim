@@ -15,10 +15,10 @@ filetype plugin on
 call plug#begin('~/.config/nvim/autoload/plugged')
 
     Plug 'scrooloose/nerdtree'
+	Plug 'ErichDonGubler/vim-sublime-monokai'
 
 call plug#end()
 
-" open new split panes to right and below
-set splitright
-set splitbelow
+" Colorscheme
+colorscheme sublimemonokai
 
