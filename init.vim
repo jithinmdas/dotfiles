@@ -22,4 +22,6 @@ call plug#end()
 " Colorscheme
 colorscheme sublimemonokai
 
+" Shortcuts
 nmap <C-n> :NERDTree<CR>
+nmap <C-f> :%!astyle --mode=c --style=ansi<CR>
