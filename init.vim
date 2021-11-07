@@ -22,3 +22,4 @@ call plug#end()
 " Colorscheme
 colorscheme sublimemonokai
 
+nmap <C-n> :NERDTree<CR>
