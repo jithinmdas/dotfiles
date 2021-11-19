@@ -7,6 +7,7 @@ set cc=80                   " set an 80 column border for good coding style
 set number                  " add line numbers
 set shiftwidth=4            " width for autoindents
 set tabstop=4               " number of columns occupied by a tab
+set expandtab				" replaces tabs with spaces
 filetype plugin indent on   "allow auto-indenting depending on file type
 syntax on                   " syntax highlighting
 filetype plugin on
