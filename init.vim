@@ -17,15 +17,22 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     Plug 'scrooloose/nerdtree'
 	Plug 'ErichDonGubler/vim-sublime-monokai'
+    Plug 'gkjgh/cobalt'
+    Plug 'mangeshrex/uwu.vim'
+    Plug 'zivyangll/git-blame.vim'
 
 call plug#end()
 
 " Colorscheme
-colorscheme sublimemonokai
-
+" colorscheme sublimemonokai
+set background=light
+colorscheme uwu
+ 
 " Shortcuts
 nmap <C-n> :NERDTree<CR>
 nmap <C-f> :%!astyle --mode=c --style=ansi<CR>
+nmap <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+nmap <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -33,3 +40,15 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Returns true if the color hex value is light
+function! IsHexColorLight(color) abort
+  let l:raw_color = trim(a:color, '#')
+
+  let l:red = str2nr(substitute(l:raw_color, '(.{2}).{4}', '1', 'g'), 16)
+  let l:green = str2nr(substitute(l:raw_color, '.{2}(.{2}).{2}', '1', 'g'), 16)
+  let l:blue = str2nr(substitute(l:raw_color, '.{4}(.{2})', '1', 'g'), 16)
+
+  let l:brightness = ((l:red * 299) + (l:green * 587) + (l:blue * 114)) / 1000
+
+  return l:brightness > 155
+endfunction
