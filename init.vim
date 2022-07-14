@@ -21,6 +21,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mangeshrex/uwu.vim'
     Plug 'zivyangll/git-blame.vim'
     Plug 'mfulz/cscope.nvim'
+    Plug 'tpope/vim-fugitive'
+    Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
@@ -28,9 +30,14 @@ call plug#end()
 " colorscheme sublimemonokai
 set background=light
 colorscheme uwu
- 
+
+" For gitgutter update vim every 100msec
+" instead 4000msec. vim writes its swap file
+" depending on this time
+set updatetime=100
+
 " Shortcuts
-nmap <C-n> :NERDTree<CR>
+nmap <C-n> :NERDTreeToggle<CR>
 nmap <C-f> :%!astyle --mode=c --style=ansi<CR>
 nmap <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 nmap <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
